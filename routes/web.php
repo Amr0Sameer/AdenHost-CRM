@@ -26,9 +26,6 @@ Route::get('/projects', function () {
 Route::get('/finance', function () {
     return view('finance');
 });
-Route::get('/clients-accounts', function () {
-    return view('clients-accounts');
-});
 
 Auth::routes();
 

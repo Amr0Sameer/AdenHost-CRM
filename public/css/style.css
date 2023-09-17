@@ -39,3 +39,25 @@
   display: flex;
   justify-content: space-around;
 }
+.important{
+  width: 80%;
+  margin: auto;
+  margin-top: 25px;
+}
+.important table{
+  width: 100%;
+}
+.important .infos{
+  display: flex;
+  background: #47b2e4;
+  height: 50px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 8px;
+}
+.important .infos span{
+   margin: 0 20px;
+   text-align: center;
+   color: whitesmoke;
+   font-size: 20px;
+}

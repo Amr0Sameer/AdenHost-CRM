@@ -5,20 +5,15 @@
 @section('index')
 <div class="important">
     <h2>المشاريع الحالية</h2>
-    <table>
-        <thead>
-            <th>الرقم</th>
-            <th>اسم المشروع</th>
-            <th>اسم المؤسسة</th>
-            <th>تاريخ الاضافة</th>
-            <th>تاريخ االانتهاء</th>
-            <th>العاملين</th>
-            <th>التقدم</th>
-            <th>الحالة</th>
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table>
+    <div class="infos">
+        <span>الرقم</span>
+        <span>اسم المشروع</span>
+        <span>اسم المؤسسة</span>
+        <span>تاريخ الاضافة</span>
+        <span>تاريخ االانتهاء</span>
+        <span>العاملين</span>
+        <span>التقدم</span>
+        <span>الحالة</span>
+    </div>
 </div>
 @endsection

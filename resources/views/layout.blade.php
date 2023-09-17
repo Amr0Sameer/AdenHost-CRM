@@ -11,7 +11,6 @@
   <a href="customers">الزبائن</a>
   <a href="projects">المشاريع</a>
   <a href="finance">المالية</a>
-  <a href="clients-accounts">حسابات المستخدمين</a>
 </div>
 
 <!-- Page content -->
