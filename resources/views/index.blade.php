@@ -15,5 +15,8 @@
         <span>اخر موعد</span>
         <span>المبلغ (ان وجد)</span>
     </div>
+    <div class="infos-content">
+        
+    </div>
 </div>
 @endsection

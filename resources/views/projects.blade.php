@@ -15,5 +15,8 @@
         <span>التقدم</span>
         <span>الحالة</span>
     </div>
+    <div class="infos-content">
+        
+    </div>
 </div>
 @endsection

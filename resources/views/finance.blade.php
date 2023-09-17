@@ -14,5 +14,8 @@
         <span>المبلغ</span>
         <span>تم الدفع</span>
     </div>
+    <div class="infos-content">
+        
+    </div>
 </div>
 @endsection

@@ -13,5 +13,8 @@
         <span>المبلغ</span>
         <span>تاريخ الاضافة</span>
     </div>
+    <div class="infos-content">
+        
+    </div>
 </div>
 @endsection

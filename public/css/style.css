@@ -61,3 +61,8 @@
    color: whitesmoke;
    font-size: 20px;
 }
+.important .infos-content{
+  margin-top: 10px;
+  border-radius: 8px;
+  background-color: #e4e4e4;
+}
