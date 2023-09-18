@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('title','Finance')
+@section('h-fin','active')
 
 @section('index')
 <div class="important">

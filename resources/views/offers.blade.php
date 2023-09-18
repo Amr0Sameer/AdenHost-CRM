@@ -1,21 +1,20 @@
 @extends('layout')
 
-@section('title','Customers')
-@section('h-cust','active')
+@section('title','Offers')
+@section('h-off','active')
 
 @section('index')
 <div class="important">
-    <h2>معلومات العملاء</h2>
+    <h2>المشاريع المحتملة</h2>
 @endsection
 @section('thead')
     <thead>
         <tr>
         <th scope="col">الرقم</th>
-        <th scope="col">اسم المؤسسة</th>
-        <th scope="col">اسم الزبون</th>
-        <th scope="col">نوع الخدمة</th>
+        <th scope="col">الاسم</th>
+        <th scope="col">تاريخ التقديم</th>
+        <th scope="col">عنوان المشروع</th>
         <th scope="col">المبلغ</th>
-        <th scope="col">تاريخ الاضافة</th>
         </tr>
       </thead>
     @endsection

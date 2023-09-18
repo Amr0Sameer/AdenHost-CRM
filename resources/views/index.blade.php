@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('title','Home')
+@section('h-index','active')
 
 @section('index')
 <div class="important">

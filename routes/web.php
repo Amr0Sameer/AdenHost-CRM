@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,14 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/index', function () {
     return view('index');
 });
-Route::get('/customers', function () {
-    return view('customers');
-});
+Route::get('/customers',[CustomerController::class, "index"]);
+
 Route::get('/projects', function () {
     return view('projects');
 });
 Route::get('/finance', function () {
     return view('finance');
+});
+Route::get('/offers', function () {
+    return view('offers');
 });
 
 Auth::routes();

@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('title','Projects')
+@section('h-proj','active')
 
 @section('index')
 <div class="important">
