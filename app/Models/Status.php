@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Status extends Model
 {
-    public function status(){
-        return $this->hasMany(Status::class);
+    public function project(){
+        return $this->belongsTo(Project::class);
     }
 }

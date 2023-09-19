@@ -13,21 +13,21 @@
         <th scope="col">الرقم</th>
         <th scope="col">اسم المؤسسة</th>
         <th scope="col">اسم الزبون</th>
-        <th scope="col">نوع الخدمة</th>
-        <th scope="col">المبلغ</th>
+        <th scope="col">رقم الهاتف</th>
+        <th scope="col">الموفع</th>
         <th scope="col">تاريخ الاضافة</th>
         </tr>
       </thead>
-    @endsection
-    @section('tbody')
+@endsection
+@section('tbody')
     <tbody>
         @foreach ($customer as $cust)
         <tr>
         <td>{{ $cust['id'] }}</span>
         <td>{{ $cust['name'] }}</span>
         <td>{{ $cust['cust_name'] }}</span>
-        <td>{{ $cust['type'] }}</span>
-        <td>{{ $cust['price'] }}</span>
+        <td>{{ $cust['phone'] }}</span>
+        <td>{{ $cust['location'] }}</span>
         <td>{{ $cust['added_date'] }}</span>
         </tr>
         @endforeach

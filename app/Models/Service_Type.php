@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Service_Type extends Model
 {
-    public function status(){
-        return $this->hasMany(Status::class);
+    public function index(){
+    return Service_Type::with('Project')->get();
     }
 }
