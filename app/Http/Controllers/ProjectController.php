@@ -9,8 +9,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        return view('projects',[
-            'project' => Project::all()
-        ]);
+        $project = Project::get();
+        return view('projects',compact('project'));
     }
 }

@@ -27,9 +27,9 @@
 <tbody>
     @foreach ($project as $proj)
     <tr>
-    <td>{{ $proj['id'] }}</td>
+    <td>{{ $proj->id }}</td>
     <td>{{ $proj['company_name'] }}</td>
-    <td>{{ $proj['type'] }}</td>
+    <td>{{ $proj->status->name }}</td>
     <td>{{ $proj['start_date'] }}</td>
     <td>{{ $proj['end_date'] }}</td>
     <td>{{ $proj['workers'] }}</td>
