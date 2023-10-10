@@ -3,15 +3,15 @@
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
     @vite(['resources/js/app.js'])
     <title>@yield('title')</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 <!-- Side navigation -->
 <div class="sidenav">
   <a href="index" class="@yield('h-index')">الصفحة الرئيسية</a>
-  <a href="customers" class="@yield('h-cust')">الزبائن</a>
-  <a href="projects" class="@yield('h-proj')">المشاريع</a>
-  <a href="finance" class="@yield('h-fin')">المالية</a>
-  <a href="offers" class="@yield('h-off')">العروض</a>
+  <a href="leads" class="@yield('h-lead')">الزبائن المحتملين</a>
+  <a href="projects" class="@yield('h-proj')">المشاريع الحالية</a>
+  <a href="finance" class="@yield('h-fin')">الادارة المالية</a>
 </div>
 
 <!-- Page content -->

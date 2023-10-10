@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\FinancesController;
+use App\Http\Controllers\LeadsController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProjectController;
 use App\Models\Project;
 use Illuminate\Support\Facades\Auth;
@@ -17,20 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', function () {
-    return view('index');
-});
-Route::get('/customers',[CustomerController::class, "index"]);
+Route::get('/index',[IndexController::class, 'index']);
 
 Route::get('/projects',[ProjectController::class, "index"]);
 
-Route::get('/finance', function () {
-    return view('finance');
-});
-Route::get('/offers', function () {
-    return view('offers');
-});
+Route::get('finance',[FinancesController::class, "index"]);
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/leads', LeadsController::class);

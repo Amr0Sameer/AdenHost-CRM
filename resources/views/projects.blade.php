@@ -19,7 +19,6 @@
         <th scope="col">العاملين</th>
         <th scope="col">التقدم</th>
         <th scope="col">الحالة</th>
-        <th scope="col">تاريخ الاضافة</th>
     </tr>
 </thead>
 @endsection
@@ -27,15 +26,14 @@
 <tbody>
     @foreach ($project as $proj)
     <tr>
-    <td>{{ $proj->id }}</td>
+    <td>{{ $proj['id'] }}</td>
+    <td>{{ $proj['project_name'] }}</td>
     <td>{{ $proj['company_name'] }}</td>
-    <td>{{ $proj->status->name }}</td>
     <td>{{ $proj['start_date'] }}</td>
     <td>{{ $proj['end_date'] }}</td>
     <td>{{ $proj['workers'] }}</td>
-    <td>{{ $proj['progress'] }}</td>
-    <td>{{ $proj['status'] }}</td>
-    <td>{{ $proj['added_date'] }}</td>
+    <td>{{ $proj->progress->name }}</td>
+    <td>{{ $proj->stat->name }}</td>
     </tr>
     @endforeach
   </tbody>

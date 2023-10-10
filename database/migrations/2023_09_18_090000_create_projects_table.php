@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->id();
             $table->string('project_name');
             $table->string('company_name');
@@ -21,8 +22,9 @@ return new class extends Migration
             $table->date('end_date');
             $table->string('workers');
             $table->integer('progress');
-            $table->string('status');
-            $table->timestamp('added_date');
+            $table->unsignedBigInteger('stat')->index();
+
+            $table->foreign('stat')->references('id')->on('stat')->cascadeOnDelete();
         });
     }
 

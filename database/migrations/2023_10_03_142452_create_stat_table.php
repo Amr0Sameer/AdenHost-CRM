@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('stat', function (Blueprint $table) {
             $table->engine = "InnoDB";
             $table->id();
             $table->string('name');
-            $table->string('cust_name');
-            $table->integer('type');
-            $table->integer('price');
         });
     }
 
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('stat');
     }
 };

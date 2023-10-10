@@ -7,9 +7,9 @@ use App\Models\Project;
 
 class ProjectController extends Controller
 {
-    public function index()
-    {
-        $project = Project::get();
-        return view('projects',compact('project'));
+    public function index(){
+        return view('projects',[
+            'project' => Project::all()
+        ]);
     }
 }

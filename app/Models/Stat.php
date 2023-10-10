@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Project;
 
-class Status extends Model
+class Stat extends Model
 {
+    use HasFactory;
     public function project(){
-        return $this->belongsTo(Project::class);
+        return $this->hasMany(Project::class,'stat_id');
     }
 }
