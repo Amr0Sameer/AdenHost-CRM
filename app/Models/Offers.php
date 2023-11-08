@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Customers;
+use App\Models\Leads;
 
-class Project extends Model
+class Offers extends Model
 {
     use HasFactory;
-    public function Customers(){
-        return $this->hasMany(Customers::class,'project');
+
+    public function Leads(){
+        return $this->belongsTo(Leads::class, 'lead_name');
     }
 }

@@ -15,7 +15,7 @@ class LeadsController extends Controller
     public function index()
     {
         return view('Leads',[
-            'Leads' => Leads::all()
+            'Leads' => Leads::Where('type','customer')->get()
         ]);
     }
 
@@ -51,10 +51,14 @@ class LeadsController extends Controller
        $lead->email =  strip_tags($request->input('email'));
        $lead->project_type = strip_tags($request->input('project_type'));
        $lead->offer_state = strip_tags($request->input('offer_state'));
+       $lead->type = 'customer';
 
-       $lead->save();
-
-       return redirect()->route('/leads');
+       if($lead->save()){
+        return response()->json('Success','201');
+       }
+       else{
+        return response()->json('Fail','400');
+       }
     }
 
     /**
@@ -65,7 +69,20 @@ class LeadsController extends Controller
      */
     public function show($id)
     {
-        //
+        $Leads = Leads::find($id);
+        if($Leads){
+            return response()->json([
+                'status' => '200',
+                'lead' => $Leads
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status' => '404',
+                'lead' => 'No Lead Is Found'
+            ]);
+        }
     }
 
     /**
@@ -88,7 +105,23 @@ class LeadsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'update_name' => 'required',
+            'update_phone' => 'required',
+            'update_email' => 'required',
+            'update_project_type' => 'required',
+            'update_offer_state' => 'required'
+       ]);
+       $lead = Leads::findOrFail($id);
+         if($lead){
+            $lead->name =   strip_tags($request->input('update_name'));
+            $lead->phone = strip_tags($request->input('update_phone'));
+            $lead->email =  strip_tags($request->input('update_email'));
+            $lead->project_type =  strip_tags($request->input('update_project_type'));
+            $lead->offer_state =  strip_tags($request->input('update_offer_state'));
+            $lead->save();
+            return redirect()->route('leads.index');
+       }
     }
 
     /**
@@ -99,6 +132,8 @@ class LeadsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Leads::findOrFail($id);
+        $delete->delete();
+        return redirect()->route('leads.index');
     }
 }

@@ -52,6 +52,7 @@ table th {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  text-align: center;
 }
 
 .card {
@@ -104,4 +105,17 @@ table th {
   justify-content: space-between;
   padding: 0 12px;
   margin: 10px 0;
+}
+td button{
+  border: 0;
+  background: transparent;
+}
+td button .fa-circle-xmark{
+  color: red;
+}
+td button .fa-pen-to-square{
+  color: rgb(13, 13, 137);
+}
+td form{
+  margin: 0;
 }

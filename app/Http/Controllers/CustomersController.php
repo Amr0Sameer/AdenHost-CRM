@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Leads;
 use App\Models\Offers;
 use Illuminate\Http\Request;
-use App\Models\Project;
 
-class ProjectController extends Controller
+class CustomersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('projects',[
-            'project' => Project::all()
+        return view('customers',[
+            'Leads' => Leads::Where('type','partner')->get()
         ]);
     }
 
@@ -39,7 +38,27 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'project_type' => 'required',
+            'offer_state' => 'required'
+       ]);
+       
+       $lead = new Leads();
+       $lead->name =   strip_tags($request->input('name'));
+       $lead->phone = strip_tags($request->input('phone'));
+       $lead->email =  strip_tags($request->input('email'));
+       $lead->project_type = strip_tags($request->input('project_type'));
+       $lead->offer_state = '---';
+
+       if($lead->save()){
+        return response()->json('Success','201');
+       }
+       else{
+        return response()->json('Fail','400');
+       }
     }
 
     /**
@@ -50,12 +69,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $project = Project::find($id);
-        $LeadID = $project->company_name;
-        $lead = Leads::find($LeadID);
-        return view('details',[
-            'offers' => Offers::find($lead->id)
-        ]);
+        //
     }
 
     /**
@@ -89,8 +103,6 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        $destroy = Project::findOrFail($id);
-        $destroy->delete();
-        return redirect()->route('projects.index');
+        //
     }
 }

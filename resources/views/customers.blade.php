@@ -1,13 +1,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 @extends('layout')
 
-@section('title','Home')
-@section('h-lead','active')
+@section('title','Customers')
+@section('h-cust','active')
 
 @section('index')
 <div class="important">
     <div class="header-section">
-        <h2>العملاء المحتملين</h2>
+        <h2>العملاء</h2>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">اضافة عميل</button>
     </div>
     <div class="infos">
@@ -20,7 +20,6 @@
         <th scope="col">رقم الهاتف</th>
         <th scope="col">البريد الالكتروني</th>
         <th scope="col">نوع العمل</th>
-        <th scope="col">حالة الطلب</th>
         <th scope="col">تعديل</th>
         <th scope="col">حذف</th>
     </tr>
@@ -38,7 +37,6 @@
     <td>{{ $lead['phone'] }}</td>
     <td>{{ $lead['email'] }}</td>
     <td>{{ $lead['project_type'] }}</td>
-    <td>{{ $lead['offer_state'] }}</td>
     <td><form id="leadform" action="javascript:void(0)">
         @csrf
         @method('GET')
@@ -110,18 +108,6 @@
                 </div>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label for="offer_state" class="form-label">حالة الطلب</label>
-                <select name="offer_state" id="offer_state" class="form-control">
-                    <option value="قيد الانتظار">قيد الانتظار</option>
-                    <option value="تم الارسال">تم الارسال</option>
-                </select>
-                @error('offer_state')
-                <div class="form-error">
-                    {{ $message }}
-                </div>
-                @enderror
-            </div>
             <button type="submit" id="submit">Submit</button>
           </form>
         </div>
@@ -177,18 +163,6 @@
                     <option value="استضافة">استضافة</option>
                 </select>
                 @error('update_project_type')
-                <div class="form-error">
-                    {{ $message }}
-                </div>
-                @enderror
-            </div>
-            <div class="mb-3">
-                <label for="offer_state" class="form-label">نوع العمل</label>
-                <select name="update_offer_state" id="update_offer_state" class="form-control">
-                    <option value="قيد الانتظار">قيد الانتظار</option>
-                    <option value="تم الارسال">تم الارسال</option>
-                </select>
-                @error('update_offer_state')
                 <div class="form-error">
                     {{ $message }}
                 </div>
